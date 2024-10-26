@@ -1,0 +1,23 @@
+[1mdiff --git a/blog/templates/blog/post_list.html b/blog/templates/blog/post_list.html[m
+[1mindex c338474..3d50d27 100644[m
+[1m--- a/blog/templates/blog/post_list.html[m
+[1m+++ b/blog/templates/blog/post_list.html[m
+[36m@@ -7,11 +7,13 @@[m
+             <h1><a href="">Django Girls Blog</a></h1>[m
+         </div>[m
+ [m
+[31m-        <div>[m
+[31m-            <p>published: 14.06.2014, 12:14</p>[m
+[31m-            <h2><a href="">My first post</a></h2>[m
+[31m-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>[m
+[31m-        </div>[m
+[32m+[m[32m             {% for post in posts %}[m
+[32m+[m[32m         <div>[m
+[32m+[m[32m                <p>published: {{ post.published_date }}</p>[m
+[32m+[m[32m                <h1><a href="">{{ post.title }}</a></h1>[m
+[32m+[m[32m             <p>{{ post.text|linebreaksbr }}</p>[m
+[32m+[m[32m         </div>[m
+[32m+[m[32m        {% endfor %}[m
+ [m
+         <div>[m
+             <p>published: 14.06.2014, 12:14</p>[m
